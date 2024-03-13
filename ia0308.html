@@ -1,0 +1,708 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+				<link type="text/css" rel="stylesheet" href="styles/reset.css"
+			media="all" />
+			<link type="text/css" rel="stylesheet" href="styles/view.css"
+			media="all" />
+			<link type="text/css" rel="stylesheet" href="styles/print.css"
+			media="print" />
+							<script type="text/javascript" src="js/jquery.js"></script>
+				<script type="text/javascript" src="js/fusioncharts.js"></script>
+				<script type="text/javascript" src="js/fusioncharts.charts.js"></script>
+				<script type="text/javascript" src="js/fusioncharts.theme.fusion.js"></script>
+				<style type="text/css">
+							@font-face {
+						font-family: 'Barlow';
+						src: url('font/Barlow-Regular.ttf');
+						font-weight: 400;
+						font-style: normal;
+					}
+									@font-face {
+						font-family: 'Barlow';
+						src: url('font/Barlow-Italic.ttf');
+						font-weight: 400;
+						font-style: italic;
+					}
+									@font-face {
+						font-family: 'Barlow';
+						src: url('font/Barlow-Medium.ttf');
+						font-weight: 500;
+						font-style: normal;
+					}
+									@font-face {
+						font-family: 'Barlow';
+						src: url('font/Barlow-MediumItalic.ttf');
+						font-weight: 500;
+						font-style: italic;
+					}
+									@font-face {
+						font-family: 'Barlow';
+						src: url('font/Barlow-SemiBold.ttf');
+						font-weight: 600;
+						font-style: normal;
+					}
+									@font-face {
+						font-family: 'Barlow';
+						src: url('font/Barlow-SemiBoldItalic.ttf');
+						font-weight: 600;
+						font-style: italic;
+					}
+									@font-face {
+						font-family: 'Barlow';
+						src: url('font/Barlow-Bold.ttf');
+						font-weight: 700;
+						font-style: normal;
+					}
+									@font-face {
+						font-family: 'Barlow';
+						src: url('font/Barlow-BoldItalic.ttf');
+						font-weight: 700;
+						font-style: italic;
+					}
+					</style>
+</head>
+<body style="min-width: 960px">
+<div id="content">
+<div id="header">
+<img class="logo" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAASABIAAD/4QCARXhpZgAATU0AKgAAAAgABQESAAMAAAABAAEAAAEaAAUAAAABAAAASgEbAAUAAAABAAAAUgEoAAMAAAABAAIAAIdpAAQAAAABAAAAWgAAAAAAAABIAAAAAQAAAEgAAAABAAKgAgAEAAAAAQAAAYagAwAEAAAAAQAAAIcAAAAA/+EJIWh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8APD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iWE1QIENvcmUgNi4wLjAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIi8+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPD94cGFja2V0IGVuZD0idyI/PgD/4gxYSUNDX1BST0ZJTEUAAQEAAAxITGlubwIQAABtbnRyUkdCIFhZWiAHzgACAAkABgAxAABhY3NwTVNGVAAAAABJRUMgc1JHQgAAAAAAAAAAAAAAAAAA9tYAAQAAAADTLUhQICAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABFjcHJ0AAABUAAAADNkZXNjAAABhAAAAGx3dHB0AAAB8AAAABRia3B0AAACBAAAABRyWFlaAAACGAAAABRn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" alt="TestRail" /><h1>[아임유] PC셀러 2.5.3 / POS커넥터 1.1.1(어시스트) - 240308</h1>
+<p class="comment bottom">Project: POS Connector<br />By Taejun Kim, 2024-03-13 오후 12:44</p>
+
+</div>
+
+<h1 class="main">
+	<span class="title">
+		Run: [아임유] PC셀러 2.5.3 / POS커넥터 1.1.1(어시스트) - 240308			</span>
+</h1>
+
+
+
+		<div style="margin: 1.5em 0">
+	<table class="grid">
+	<colgroup>
+		<col></col>
+		<col class="comment"></col>
+	</colgroup>
+			<tr class="even">
+		<td>Created On</td>
+		<td class="right">
+			2024-03-08		</td>
+	</tr>
+		<tr class="odd">
+		<td>Completed</td>
+				<td class="right">No</td>
+			</tr>
+	</table>	</div>
+
+
+
+
+			<h1><img class="right noPrint w16" src="images/report-assets/help.svg" alt="" title="Shows the tests and their current statuses for the selected test runs." />Tests &amp; Results</h1>
+														
+		<h3><span class="chapter">1.</span>
+	POS Connector	<span class="secondary">(0)</span>
+	</h3>
+					<div class="gridContainer">
+				<h3><span class="chapter">1.1.</span>
+	설정	<span class="secondary">(0)</span>
+	</h3>
+					<div class="gridContainer">
+				<h3><span class="chapter">1.1.1.</span>
+	POS 통신	<span class="secondary">(3)</span>
+	</h3>
+				<table class="grid">
+	<colgroup>
+					<col style="width: 75px"></col>
+					<col></col>
+		<col style="width: 125px"></col>	</colgroup>
+	<tr class="header">
+					<th class="w30 id">ID</th>
+				<th class="w30 title">Title</th>
+	<th class="status">Status</th>
+	</tr>
+											<tr class="odd">
+								<td class="id">
+							<a target="_top" href="https://payhere.testrail.io/index.php?/tests/view/16084">T16084</a>
+					</td>
+					<td>
+					<a target="_top" href="https://payhere.testrail.io/index.php?/tests/view/16084">POS커넥터 설치</a>
+				</td>
+		<td><span class="statusBox" style="background: #338a41; color: #ffffff">Passed</span></td>
+			</tr>
+													<tr class="even">
+								<td class="id">
+							<a target="_top" href="https://payhere.testrail.io/index.php?/tests/view/16085">T16085</a>
+					</td>
+					<td>
+					<a target="_top" href="https://payhere.testrail.io/index.php?/tests/view/16085">POS 설정</a>
+				</td>
+		<td><span class="statusBox" style="background: #338a41; color: #ffffff">Passed</span></td>
+			</tr>
+													<tr class="odd">
+								<td class="id">
+							<a target="_top" href="https://payhere.testrail.io/index.php?/tests/view/16086">T16086</a>
+					</td>
+					<td>
+					<a target="_top" href="https://payhere.testrail.io/index.php?/tests/view/16086">POS정보 동기화</a>
+				</td>
+		<td><span class="statusBox" style="background: #338a41; color: #ffffff">Passed</span></td>
+			</tr>
+			</table>					</div>
+				<h3><span class="chapter">1.2.</span>
+	고객관리	<span class="secondary">(0)</span>
+	</h3>
+					<div class="gridContainer">
+				<h3><span class="chapter">1.2.1.</span>
+	포인트	<span class="secondary">(5)</span>
+	</h3>
+				<table class="grid">
+	<colgroup>
+					<col style="width: 75px"></col>
+					<col></col>
+		<col style="width: 125px"></col>	</colgroup>
+	<tr class="header">
+					<th class="w30 id">ID</th>
+				<th class="w30 title">Title</th>
+	<th class="status">Status</th>
+	</tr>
+											<tr class="odd">
+								<td class="id">
+							<a target="_top" href="https://payhere.testrail.io/index.php?/tests/view/16091">T16091</a>
+					</td>
+					<td>
+					<a target="_top" href="https://payhere.testrail.io/index.php?/tests/view/16091">포인트 사용 유무</a>
+				</td>
+		<td><span class="statusBox" style="background: #338a41; color: #ffffff">Passed</span></td>
+			</tr>
+													<tr class="even">
+								<td class="id">
+							<a target="_top" href="https://payhere.testrail.io/index.php?/tests/view/16107">T16107</a>
+					</td>
+					<td>
+					<a target="_top" href="https://payhere.testrail.io/index.php?/tests/view/16107">적립 간편 설정</a>
+				</td>
+		<td><span class="statusBox" style="background: #338a41; color: #ffffff">Passed</span></td>
+			</tr>
+													<tr class="odd">
+								<td class="id">
+							<a target="_top" href="https://payhere.testrail.io/index.php?/tests/view/16108">T16108</a>
+					</td>
+					<td>
+					<a target="_top" href="https://payhere.testrail.io/index.php?/tests/view/16108">최소 사용 포인트</a>
+				</td>
+		<td><span class="statusBox" style="background: #338a41; color: #ffffff">Passed</span></td>
+			</tr>
+													<tr class="even">
+								<td class="id">
+							<a target="_top" href="https://payhere.testrail.io/index.php?/tests/view/16109">T16109</a>
+					</td>
+					<td>
+					<a target="_top" href="https://payhere.testrail.io/index.php?/tests/view/16109">포인트 유효 기간</a>
+				</td>
+		<td><span class="statusBox" style="background: #338a41; color: #ffffff">Passed</span></td>
+			</tr>
+													<tr class="odd">
+								<td class="id">
+							<a target="_top" href="https://payhere.testrail.io/index.php?/tests/view/16110">T16110</a>
+					</td>
+					<td>
+					<a target="_top" href="https://payhere.testrail.io/index.php?/tests/view/16110">수동 적립</a>
+				</td>
+		<td><span class="statusBox" style="background: #338a41; color: #ffffff">Passed</span></td>
+			</tr>
+			</table>				<div class="gridContainer">
+				<h3><span class="chapter">1.2.1.1.</span>
+	자동 적립	<span class="secondary">(2)</span>
+	</h3>
+				<table class="grid">
+	<colgroup>
+					<col style="width: 75px"></col>
+					<col></col>
+		<col style="width: 125px"></col>	</colgroup>
+	<tr class="header">
+					<th class="w30 id">ID</th>
+				<th class="w30 title">Title</th>
+	<th class="status">Status</th>
+	</tr>
+											<tr class="odd">
+								<td class="id">
+							<a target="_top" href="https://payhere.testrail.io/index.php?/tests/view/16111">T16111</a>
+					</td>
+					<td>
+					<a target="_top" href="https://payhere.testrail.io/index.php?/tests/view/16111">결제 금액별 적립</a>
+				</td>
+		<td><span class="statusBox" style="background: #338a41; color: #ffffff">Passed</span></td>
+			</tr>
+													<tr class="even">
+								<td class="id">
+							<a target="_top" href="https://payhere.testrail.io/index.php?/tests/view/16112">T16112</a>
+					</td>
+					<td>
+					<a target="_top" href="https://payhere.testrail.io/index.php?/tests/view/16112">카테고리별 적립</a>
+				</td>
+		<td><span class="statusBox" style="background: #338a41; color: #ffffff">Passed</span></td>
+			</tr>
+			</table>					</div>
+				<h3><span class="chapter">1.2.2.</span>
+	스탬프	<span class="secondary">(3)</span>
+	</h3>
+				<table class="grid">
+	<colgroup>
+					<col style="width: 75px"></col>
+					<col></col>
+		<col style="width: 125px"></col>	</colgroup>
+	<tr class="header">
+					<th class="w30 id">ID</th>
+				<th class="w30 title">Title</th>
+	<th class="status">Status</th>
+	</tr>
+											<tr class="odd">
+								<td class="id">
+							<a target="_top" href="https://payhere.testrail.io/index.php?/tests/view/16106">T16106</a>
+					</td>
+					<td>
+					<a target="_top" href="https://payhere.testrail.io/index.php?/tests/view/16106">스탬프 사용 여부</a>
+				</td>
+		<td><span class="statusBox" style="background: #338a41; color: #ffffff">Passed</span></td>
+			</tr>
+													<tr class="even">
+								<td class="id">
+							<a target="_top" href="https://payhere.testrail.io/index.php?/tests/view/16097">T16097</a>
+					</td>
+					<td>
+					<a target="_top" href="https://payhere.testrail.io/index.php?/tests/view/16097">수동적립</a>
+				</td>
+		<td><span class="statusBox" style="background: #338a41; color: #ffffff">Passed</span></td>
+			</tr>
+													<tr class="odd">
+								<td class="id">
+							<a target="_top" href="https://payhere.testrail.io/index.php?/tests/view/16098">T16098</a>
+					</td>
+					<td>
+					<a target="_top" href="https://payhere.testrail.io/index.php?/tests/view/16098">스탬프 최대 완성 개수</a>
+				</td>
+		<td><span class="statusBox" style="background: #338a41; color: #ffffff">Passed</span></td>
+			</tr>
+			</table>				<div class="gridContainer">
+				<h3><span class="chapter">1.2.2.1.</span>
+	자동적립	<span class="secondary">(5)</span>
+	</h3>
+				<table class="grid">
+	<colgroup>
+					<col style="width: 75px"></col>
+					<col></col>
+		<col style="width: 125px"></col>	</colgroup>
+	<tr class="header">
+					<th class="w30 id">ID</th>
+				<th class="w30 title">Title</th>
+	<th class="status">Status</th>
+	</tr>
+											<tr class="odd">
+								<td class="id">
+							<a target="_top" href="https://payhere.testrail.io/index.php?/tests/view/16092">T16092</a>
+					</td>
+					<td>
+					<a target="_top" href="https://payhere.testrail.io/index.php?/tests/view/16092">주문 상품당 1개 적립</a>
+				</td>
+		<td><span class="statusBox" style="background: #338a41; color: #ffffff">Passed</span></td>
+			</tr>
+													<tr class="even">
+								<td class="id">
+							<a target="_top" href="https://payhere.testrail.io/index.php?/tests/view/16093">T16093</a>
+					</td>
+					<td>
+					<a target="_top" href="https://payhere.testrail.io/index.php?/tests/view/16093">결제 금액별 적립</a>
+				</td>
+		<td><span class="statusBox" style="background: #338a41; color: #ffffff">Passed</span></td>
+			</tr>
+													<tr class="odd">
+								<td class="id">
+							<a target="_top" href="https://payhere.testrail.io/index.php?/tests/view/16094">T16094</a>
+					</td>
+					<td>
+					<a target="_top" href="https://payhere.testrail.io/index.php?/tests/view/16094">카테고리별 적립</a>
+				</td>
+		<td><span class="statusBox" style="background: #338a41; color: #ffffff">Passed</span></td>
+			</tr>
+													<tr class="even">
+								<td class="id">
+							<a target="_top" href="https://payhere.testrail.io/index.php?/tests/view/16095">T16095</a>
+					</td>
+					<td>
+					<a target="_top" href="https://payhere.testrail.io/index.php?/tests/view/16095">주문당 최대 적립 가능 개수</a>
+				</td>
+		<td><span class="statusBox" style="background: #338a41; color: #ffffff">Passed</span></td>
+			</tr>
+													<tr class="odd">
+								<td class="id">
+							<a target="_top" href="https://payhere.testrail.io/index.php?/tests/view/16096">T16096</a>
+					</td>
+					<td>
+					<a target="_top" href="https://payhere.testrail.io/index.php?/tests/view/16096">주문당 최대 적립 가능개수 제한 미사용</a>
+				</td>
+		<td><span class="statusBox" style="background: #338a41; color: #ffffff">Passed</span></td>
+			</tr>
+			</table>					<h3><span class="chapter">1.2.2.2.</span>
+	최종 보상 설정	<span class="secondary">(3)</span>
+	</h3>
+				<table class="grid">
+	<colgroup>
+					<col style="width: 75px"></col>
+					<col></col>
+		<col style="width: 125px"></col>	</colgroup>
+	<tr class="header">
+					<th class="w30 id">ID</th>
+				<th class="w30 title">Title</th>
+	<th class="status">Status</th>
+	</tr>
+											<tr class="odd">
+								<td class="id">
+							<a target="_top" href="https://payhere.testrail.io/index.php?/tests/view/16099">T16099</a>
+					</td>
+					<td>
+					<a target="_top" href="https://payhere.testrail.io/index.php?/tests/view/16099">할인쿠폰</a>
+				</td>
+		<td><span class="statusBox" style="background: #338a41; color: #ffffff">Passed</span></td>
+			</tr>
+													<tr class="even">
+								<td class="id">
+							<a target="_top" href="https://payhere.testrail.io/index.php?/tests/view/16100">T16100</a>
+					</td>
+					<td>
+					<a target="_top" href="https://payhere.testrail.io/index.php?/tests/view/16100">증정쿠폰</a>
+				</td>
+		<td><span class="statusBox" style="background: #338a41; color: #ffffff">Passed</span></td>
+			</tr>
+													<tr class="odd">
+								<td class="id">
+							<a target="_top" href="https://payhere.testrail.io/index.php?/tests/view/16101">T16101</a>
+					</td>
+					<td>
+					<a target="_top" href="https://payhere.testrail.io/index.php?/tests/view/16101">쿠폰 유효 기간</a>
+				</td>
+		<td><span class="statusBox" style="background: #338a41; color: #ffffff">Passed</span></td>
+			</tr>
+			</table>					<h3><span class="chapter">1.2.2.3.</span>
+	중간 보상 설정	<span class="secondary">(4)</span>
+	</h3>
+				<table class="grid">
+	<colgroup>
+					<col style="width: 75px"></col>
+					<col></col>
+		<col style="width: 125px"></col>	</colgroup>
+	<tr class="header">
+					<th class="w30 id">ID</th>
+				<th class="w30 title">Title</th>
+	<th class="status">Status</th>
+	</tr>
+											<tr class="odd">
+								<td class="id">
+							<a target="_top" href="https://payhere.testrail.io/index.php?/tests/view/16102">T16102</a>
+					</td>
+					<td>
+					<a target="_top" href="https://payhere.testrail.io/index.php?/tests/view/16102">중간 보상 스탬프 개수</a>
+				</td>
+		<td><span class="statusBox" style="background: #338a41; color: #ffffff">Passed</span></td>
+			</tr>
+													<tr class="even">
+								<td class="id">
+							<a target="_top" href="https://payhere.testrail.io/index.php?/tests/view/16103">T16103</a>
+					</td>
+					<td>
+					<a target="_top" href="https://payhere.testrail.io/index.php?/tests/view/16103">할인쿠폰</a>
+				</td>
+		<td><span class="statusBox" style="background: #338a41; color: #ffffff">Passed</span></td>
+			</tr>
+													<tr class="odd">
+								<td class="id">
+							<a target="_top" href="https://payhere.testrail.io/index.php?/tests/view/16104">T16104</a>
+					</td>
+					<td>
+					<a target="_top" href="https://payhere.testrail.io/index.php?/tests/view/16104">증정쿠폰</a>
+				</td>
+		<td><span class="statusBox" style="background: #338a41; color: #ffffff">Passed</span></td>
+			</tr>
+													<tr class="even">
+								<td class="id">
+							<a target="_top" href="https://payhere.testrail.io/index.php?/tests/view/16105">T16105</a>
+					</td>
+					<td>
+					<a target="_top" href="https://payhere.testrail.io/index.php?/tests/view/16105">쿠폰 유효 기간</a>
+				</td>
+		<td><span class="statusBox" style="background: #338a41; color: #ffffff">Passed</span></td>
+			</tr>
+			</table>					</div>
+				<h3><span class="chapter">1.2.3.</span>
+	어시스트	<span class="secondary">(0)</span>
+	</h3>
+					<div class="gridContainer">
+				<h3><span class="chapter">1.2.3.1.</span>
+	어시스트 설정	<span class="secondary">(1)</span>
+	</h3>
+				<table class="grid">
+	<colgroup>
+					<col style="width: 75px"></col>
+					<col></col>
+		<col style="width: 125px"></col>	</colgroup>
+	<tr class="header">
+					<th class="w30 id">ID</th>
+				<th class="w30 title">Title</th>
+	<th class="status">Status</th>
+	</tr>
+											<tr class="odd">
+								<td class="id">
+							<a target="_top" href="https://payhere.testrail.io/index.php?/tests/view/16087">T16087</a>
+					</td>
+					<td>
+					<a target="_top" href="https://payhere.testrail.io/index.php?/tests/view/16087">고객관리 어시스트 설정</a>
+				</td>
+		<td><span class="statusBox" style="background: #338a41; color: #ffffff">Passed</span></td>
+			</tr>
+			</table>					<h3><span class="chapter">1.2.3.2.</span>
+	고객	<span class="secondary">(0)</span>
+	</h3>
+					<div class="gridContainer">
+				<h3><span class="chapter">1.2.3.2.1.</span>
+	프론트 연동	<span class="secondary">(5)</span>
+	</h3>
+				<table class="grid">
+	<colgroup>
+					<col style="width: 75px"></col>
+					<col></col>
+		<col style="width: 125px"></col>	</colgroup>
+	<tr class="header">
+					<th class="w30 id">ID</th>
+				<th class="w30 title">Title</th>
+	<th class="status">Status</th>
+	</tr>
+											<tr class="odd">
+								<td class="id">
+							<a target="_top" href="https://payhere.testrail.io/index.php?/tests/view/16115">T16115</a>
+					</td>
+					<td>
+					<a target="_top" href="https://payhere.testrail.io/index.php?/tests/view/16115">프론트 연결</a>
+				</td>
+		<td><span class="statusBox" style="background: #338a41; color: #ffffff">Passed</span></td>
+			</tr>
+													<tr class="even">
+								<td class="id">
+							<a target="_top" href="https://payhere.testrail.io/index.php?/tests/view/16118">T16118</a>
+					</td>
+					<td>
+					<a target="_top" href="https://payhere.testrail.io/index.php?/tests/view/16118">프론트에서 입력</a>
+				</td>
+		<td><span class="statusBox" style="background: #338a41; color: #ffffff">Passed</span></td>
+			</tr>
+													<tr class="odd">
+								<td class="id">
+							<a target="_top" href="https://payhere.testrail.io/index.php?/tests/view/16119">T16119</a>
+					</td>
+					<td>
+					<a target="_top" href="https://payhere.testrail.io/index.php?/tests/view/16119">셀러에서 입력</a>
+				</td>
+		<td><span class="statusBox" style="background: #338a41; color: #ffffff">Passed</span></td>
+			</tr>
+													<tr class="even">
+								<td class="id">
+							<a target="_top" href="https://payhere.testrail.io/index.php?/tests/view/16088">T16088</a>
+					</td>
+					<td>
+					<a target="_top" href="https://payhere.testrail.io/index.php?/tests/view/16088">신규고객등록</a>
+				</td>
+		<td><span class="statusBox" style="background: #338a41; color: #ffffff">Passed</span></td>
+			</tr>
+													<tr class="odd">
+								<td class="id">
+							<a target="_top" href="https://payhere.testrail.io/index.php?/tests/view/16089">T16089</a>
+					</td>
+					<td>
+					<a target="_top" href="https://payhere.testrail.io/index.php?/tests/view/16089">기존고객조회</a>
+				</td>
+		<td><span class="statusBox" style="background: #338a41; color: #ffffff">Passed</span></td>
+			</tr>
+			</table>					<h3><span class="chapter">1.2.3.2.2.</span>
+	프론트 미연동	<span class="secondary">(2)</span>
+	</h3>
+				<table class="grid">
+	<colgroup>
+					<col style="width: 75px"></col>
+					<col></col>
+		<col style="width: 125px"></col>	</colgroup>
+	<tr class="header">
+					<th class="w30 id">ID</th>
+				<th class="w30 title">Title</th>
+	<th class="status">Status</th>
+	</tr>
+											<tr class="odd">
+								<td class="id">
+							<a target="_top" href="https://payhere.testrail.io/index.php?/tests/view/16116">T16116</a>
+					</td>
+					<td>
+					<a target="_top" href="https://payhere.testrail.io/index.php?/tests/view/16116">신규고객등록</a>
+				</td>
+		<td><span class="statusBox" style="background: #338a41; color: #ffffff">Passed</span></td>
+			</tr>
+													<tr class="even">
+								<td class="id">
+							<a target="_top" href="https://payhere.testrail.io/index.php?/tests/view/16117">T16117</a>
+					</td>
+					<td>
+					<a target="_top" href="https://payhere.testrail.io/index.php?/tests/view/16117">기존고객조회</a>
+				</td>
+		<td><span class="statusBox" style="background: #338a41; color: #ffffff">Passed</span></td>
+			</tr>
+			</table>					</div>
+				<h3><span class="chapter">1.2.3.3.</span>
+	적립/사용	<span class="secondary">(7)</span>
+	</h3>
+				<table class="grid">
+	<colgroup>
+					<col style="width: 75px"></col>
+					<col></col>
+		<col style="width: 125px"></col>	</colgroup>
+	<tr class="header">
+					<th class="w30 id">ID</th>
+				<th class="w30 title">Title</th>
+	<th class="status">Status</th>
+	</tr>
+											<tr class="odd">
+								<td class="id">
+							<a target="_top" href="https://payhere.testrail.io/index.php?/tests/view/16123">T16123</a>
+					</td>
+					<td>
+					<a target="_top" href="https://payhere.testrail.io/index.php?/tests/view/16123">결제 예정 금액 입력</a>
+				</td>
+		<td><span class="statusBox" style="background: #338a41; color: #ffffff">Passed</span></td>
+			</tr>
+													<tr class="even">
+								<td class="id">
+							<a target="_top" href="https://payhere.testrail.io/index.php?/tests/view/16122">T16122</a>
+					</td>
+					<td>
+					<a target="_top" href="https://payhere.testrail.io/index.php?/tests/view/16122">포인트사용</a>
+				</td>
+		<td><span class="statusBox" style="background: #338a41; color: #ffffff">Passed</span></td>
+			</tr>
+													<tr class="odd">
+								<td class="id">
+							<a target="_top" href="https://payhere.testrail.io/index.php?/tests/view/16121">T16121</a>
+					</td>
+					<td>
+					<a target="_top" href="https://payhere.testrail.io/index.php?/tests/view/16121">쿠폰사용</a>
+				</td>
+		<td><span class="statusBox" style="background: #338a41; color: #ffffff">Passed</span></td>
+			</tr>
+													<tr class="even">
+								<td class="id">
+							<a target="_top" href="https://payhere.testrail.io/index.php?/tests/view/16120">T16120</a>
+					</td>
+					<td>
+					<a target="_top" href="https://payhere.testrail.io/index.php?/tests/view/16120">0원 증정쿠폰사용</a>
+				</td>
+		<td><span class="statusBox" style="background: #338a41; color: #ffffff">Passed</span></td>
+			</tr>
+													<tr class="odd">
+								<td class="id">
+							<a target="_top" href="https://payhere.testrail.io/index.php?/tests/view/16113">T16113</a>
+					</td>
+					<td>
+					<a target="_top" href="https://payhere.testrail.io/index.php?/tests/view/16113">쿠폰 중복 사용</a>
+				</td>
+		<td><span class="statusBox" style="background: #338a41; color: #ffffff">Passed</span></td>
+			</tr>
+													<tr class="even">
+								<td class="id">
+							<a target="_top" href="https://payhere.testrail.io/index.php?/tests/view/16114">T16114</a>
+					</td>
+					<td>
+					<a target="_top" href="https://payhere.testrail.io/index.php?/tests/view/16114">결제 완료 후 적립</a>
+				</td>
+		<td><span class="statusBox" style="background: #338a41; color: #ffffff">Passed</span></td>
+			</tr>
+													<tr class="odd">
+								<td class="id">
+							<a target="_top" href="https://payhere.testrail.io/index.php?/tests/view/16090">T16090</a>
+					</td>
+					<td>
+					<a target="_top" href="https://payhere.testrail.io/index.php?/tests/view/16090">적립</a>
+				</td>
+		<td><span class="statusBox" style="background: #338a41; color: #ffffff">Passed</span></td>
+			</tr>
+			</table>					</div>
+				</div>
+				</div>
+								
+																
+<div id="footer">
+	<p class="comment bottom">Generated with TestRail <a target="_top" href="http://www.gurock.com/testrail/">test management</a> software &ndash; 8.0.3.3070<br />
+		Report: Runs (Summary), by Gurock Software (Version 1)</p>
+</div>
+
+<!--
+{
+	"runs_suites_include":"1",
+	"runs_suites_ids":null,
+	"runs_filters":null,
+	"runs_include":"3",
+	"runs_ids":[188],
+	"runs_sections_include":"1",
+	"runs_sections_ids":null,
+	"runs_limit":25,
+	"activities_daterange":"5",
+	"activities_daterange_from":null,
+	"activities_daterange_to":null,
+	"activities_statuses_include":"1",
+	"activities_statuses_ids":null,
+	"activities_limit":100,
+	"tests_filters":null,
+	"tests_columns":{
+	"tests:id":75,
+	"cases:title":0
+},
+	"tests_limit":100,
+	"content_hide_links":false,
+	"defects_from_most_recent_tests":0,
+	"status_include":false,
+	"activities_include":false,
+	"progress_include":false,
+	"tests_include":true
+}-->
+<!--
+{
+	"name":"[\uc544\uc784\uc720] PC\uc140\ub7ec 2.5.3 \/ POS\ucee4\ub125\ud130 1.1.1(\uc5b4\uc2dc\uc2a4\ud2b8) - 240308",
+	"description":null,
+	"access":"1",
+	"schedule_now":true,
+	"schedule_on_demand_via_api":true,
+	"schedule_later":false,
+	"schedule_interval":"1",
+	"schedule_weekday":1,
+	"schedule_day":1,
+	"schedule_hour":8,
+	"schedule_until":null,
+	"notify_user":false,
+	"notify_link":false,
+	"notify_link_recipients":null,
+	"notify_attachment":false,
+	"notify_attachment_recipients":"person1@example.com\r\nperson2@example.com",
+	"notify_attachment_html_format":false,
+	"notify_attachment_pdf_format":false
+}-->
+
+</div>
+
+
+<script type="text/javascript">
+$(document).ready(function()
+{
+	if (parent && parent.showReport)
+	{
+		parent.showReport();
+	}
+});
+</script>
+<script type="text/javascript">
+    var _0x172b=['915521FAOgwP','1WUUTor','85768HrInlH','1VBoajH','701113SlGqlh','596675VFZSmj','430136IMhboy','iyE4qlbA7A3C4A2F1D1I1B1A2A3B1B3fqyH2B7C-16xvhyA2E1lduC7E2B4E2F2G2C1B10B2D1E6C1E1E3E1G2c1D-16yC2A3E2yD1J2B3lozD1B1G4da1wB9B6C6dG-10A-8D3J2A9B1A8C7E1E5A2A1A1sB-22uE2D6G1F1H-8H-7lB8A5C7epG4d1I3B8lnE-13F4E2D3F1H4A10D9C1B5E6B1F4E3E1g==','9197lCfGYC','713897AESQnW','1QhbbSq','license','33GAfgRX'];var _0x3f57b9=_0x10c9;function _0x10c9(_0x3cfbbf,_0x10e5b7){_0x3cfbbf=_0x3cfbbf-0x73;var _0x172b34=_0x172b[_0x3cfbbf];return _0x172b34;}(function(_0x22f311,_0x1ab4f2){var _0x50a77f=_0x10c9;while(!![]){try{var _0x461480=parseInt(_0x50a77f(0x7b))+-parseInt(_0x50a77f(0x75))*-parseInt(_0x50a77f(0x7e))+parseInt(_0x50a77f(0x7c))+parseInt(_0x50a77f(0x78))+parseInt(_0x50a77f(0x7f))*parseInt(_0x50a77f(0x79))+parseInt(_0x50a77f(0x7a))*-parseInt(_0x50a77f(0x77))+-parseInt(_0x50a77f(0x76))*parseInt(_0x50a77f(0x73));if(_0x461480===_0x1ab4f2)break;else _0x22f311['push'](_0x22f311['shift']());}catch(_0x19bcfb){_0x22f311['push'](_0x22f311['shift']());}}}(_0x172b,0x7d53f),FusionCharts['options'][_0x3f57b9(0x74)]({'key':_0x3f57b9(0x7d),'creditLabel':![]}));</script>
+</body>
+</html>
